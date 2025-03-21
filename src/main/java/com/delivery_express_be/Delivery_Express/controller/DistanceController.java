@@ -2,7 +2,10 @@ package com.delivery_express_be.Delivery_Express.controller;
 
 import com.delivery_express_be.Delivery_Express.model.DeliveryRateResponseDTO;
 import com.delivery_express_be.Delivery_Express.model.DeliveryType;
+import com.delivery_express_be.Delivery_Express.model.Location;
+import com.delivery_express_be.Delivery_Express.repository.LocationsRepository;
 import com.delivery_express_be.Delivery_Express.service.DistanceService;
+import com.delivery_express_be.Delivery_Express.service.LocationsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,24 +41,6 @@ public class DistanceController {
             response.add(new DeliveryRateResponseDTO(entry.getKey(), values.get(0), values.get(1),values.get(2)));
         }
         return response;
-
-
-//        if(Deliveries==null){
-//            List<DeliveryType> errDev = ["error",]
-//        }
-
-
-//        if (price == null) {
-//            return Map.of("error", "price not found for these locations");
-//        }
-//
-//        return Map.of(
-//                "from", from,
-//                "to", to,
-//                "price", price,
-//                "packages", packages,
-//                "number", number
-//        );
     }
 }
 
