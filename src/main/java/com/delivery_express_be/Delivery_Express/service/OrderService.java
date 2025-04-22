@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -39,5 +40,9 @@ public class OrderService {
         Tracking tracking = new Tracking(trackingid,order.getOrderid(),3,"To be picked",formatted);
         trackingRepository.save(tracking);
         return tracking;
+    }
+
+    public List<Order> getCustomerOrders(Integer customerID){
+        return orderRepository.findByCustomerid(customerID);
     }
 }

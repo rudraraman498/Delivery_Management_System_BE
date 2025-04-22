@@ -22,4 +22,10 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(orderService.saveNewOrder(orderRequest));
     }
+
+    @GetMapping("/customer")
+    public ResponseEntity<?> customerOrders(@RequestParam Integer customerID){
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(orderService.getCustomerOrders(customerID));
+    }
 }
