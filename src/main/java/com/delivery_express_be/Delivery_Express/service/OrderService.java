@@ -7,6 +7,7 @@ import com.delivery_express_be.Delivery_Express.model.Tracking;
 import com.delivery_express_be.Delivery_Express.repository.DeliveryRepository;
 import com.delivery_express_be.Delivery_Express.repository.OrderRepository;
 import com.delivery_express_be.Delivery_Express.repository.TrackingRepository;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +45,8 @@ public class OrderService {
 
     public List<Order> getCustomerOrders(Integer customerID){
         return orderRepository.findByCustomerid(customerID);
+    }
+    public List<Order> getAllDeliveries(){
+        return orderRepository.findAll();
     }
 }

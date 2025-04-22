@@ -25,7 +25,13 @@ public class OrderController {
 
     @GetMapping("/customer")
     public ResponseEntity<?> customerOrders(@RequestParam Integer customerID){
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
                 .body(orderService.getCustomerOrders(customerID));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> allOrders(){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(orderService.getAllDeliveries());
     }
 }
