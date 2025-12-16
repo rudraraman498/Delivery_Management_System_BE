@@ -25,11 +25,11 @@ public class Tracking {
     public Tracking(){}
 
     public Tracking(String  trackingId, int orderId, int driverId, String currentLocation, String lastUpdated) {
-        trackingid = trackingId;
-        orderid = orderId;
-        driverid = driverId;
-        currentlocation = currentLocation;
-        lastupdated = lastUpdated;
+        this.trackingid = trackingId;
+        this.orderid = orderId;
+        this.driverid = driverId;
+        this.currentlocation = currentLocation;
+        this.lastupdated = lastUpdated;
     }
 
     public String  getTrackingId() {

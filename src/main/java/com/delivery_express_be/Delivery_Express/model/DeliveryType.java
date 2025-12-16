@@ -14,7 +14,8 @@ public class DeliveryType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String delivery_type;
+    @Column(name = "delivery_type")
+    private String deliveryType;
     private String delivery_rate;
     private int max_dlvry_days;
 
@@ -22,13 +23,13 @@ public class DeliveryType {
     public DeliveryType(){}
     public DeliveryType(Long id, String delivery_type, String delivery_rate) {
         this.id = id;
-        this.delivery_type = delivery_type;
+        this.deliveryType = delivery_type;
         this.delivery_rate = delivery_rate;
     }
 
     public DeliveryType(Long id, String delivery_type, String delivery_rate, int max_dlvry_days) {
         this.id = id;
-        this.delivery_type = delivery_type;
+        this.deliveryType = delivery_type;
         this.delivery_rate = delivery_rate;
         this.max_dlvry_days = max_dlvry_days;
     }
@@ -50,11 +51,11 @@ public class DeliveryType {
     }
 
     public String getDelivery_type() {
-        return delivery_type;
+        return deliveryType;
     }
 
     public void setDelivery_type(String delivery_type) {
-        this.delivery_type = delivery_type;
+        this.deliveryType = delivery_type;
     }
 
     public Double getDelivery_rate() {
